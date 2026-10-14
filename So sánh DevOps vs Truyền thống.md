@@ -9,6 +9,18 @@
 | Rollback nếu lỗi? | Khó và chậm: phải tìm bản cũ, upload đè lại bằng tay | `git revert` + push → tự động rollback |
 | Làm sao biết deploy thành công? | Tự mở website kiểm tra bằng mắt, hoặc chờ người dùng báo lỗi | GitHub Actions gửi notification ✅/❌ |
 
+## Workflow CI/CD của dự án
+
+```mermaid
+flowchart TD
+    A[Developer sửa code] --> B[git push lên main]
+    B --> C[Job build - CI<br/>kiểm tra index.html + htmlhint]
+    C -->|Thành công| D[Job deploy - CD<br/>đưa lên GitHub Pages]
+    C -.->|Lỗi| E[Dừng, không deploy]
+    D --> F[Website online<br/>huytn1508.github.io]
+    F --> G[Người dùng thấy nội dung mới]
+```
+
  Trả lời câu hỏi
 
 1. **DevOps tự động hóa những bước nào mà cách thủ công phải làm bằng tay?**
