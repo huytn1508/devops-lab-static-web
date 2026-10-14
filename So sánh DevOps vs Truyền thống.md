@@ -11,15 +11,8 @@
 
 ## Workflow CI/CD của dự án
 
-```mermaid
-flowchart TD
-    A[Developer sửa code] --> B[git push lên main]
-    B --> C[Job build - CI<br/>kiểm tra index.html + htmlhint]
-    C -->|Thành công| D[Job deploy - CD<br/>đưa lên GitHub Pages]
-    C -.->|Lỗi| E[Dừng, không deploy]
-    D --> F[Website online<br/>huytn1508.github.io]
-    F --> G[Người dùng thấy nội dung mới]
-```
+<img width="822" height="650" alt="image" src="https://github.com/user-attachments/assets/945e8ae8-dc80-4b6b-82c0-28190f392072" />
+
 
  Trả lời câu hỏi
 
