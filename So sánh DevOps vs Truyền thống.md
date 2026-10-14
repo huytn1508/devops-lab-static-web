@@ -8,3 +8,15 @@
 | Có bị sai sót không? | Có, dễ upload thiếu file, nhầm thư mục, deploy nhầm phiên bản | Không — pipeline nhất quán 100% |
 | Rollback nếu lỗi? | Khó và chậm: phải tìm bản cũ, upload đè lại bằng tay | `git revert` + push → tự động rollback |
 | Làm sao biết deploy thành công? | Tự mở website kiểm tra bằng mắt, hoặc chờ người dùng báo lỗi | GitHub Actions gửi notification ✅/❌ |
+
+ Trả lời câu hỏi
+
+1. **DevOps tự động hóa những bước nào mà cách thủ công phải làm bằng tay?**
+   Build, kiểm tra file và deploy lên GitHub Pages đều do GitHub Actions tự làm sau mỗi lần push.
+
+2. **Nếu deploy sai, làm sao quay lại phiên bản cũ?**
+   Dùng `git revert <commit>` rồi push, pipeline sẽ tự deploy lại bản cũ.
+
+3. **Pipeline tiết kiệm bao nhiêu thời gian so với thủ công?**
+   Thủ công: tải file, upload lên server, cấu hình, kiểm tra mất khoảng 15–30 phút.
+   Pipeline: `git push` rồi chờ khoảng 30 giây (theo tab Actions của lab này).
